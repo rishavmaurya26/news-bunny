@@ -1,25 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
+import Newsgrid  from './component/Newsgrid';
+import Navbar from './component/navbar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+export default class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+         <div>
+         
+          <Navbar></Navbar>
+          <Routes>
+            <Route exact path="/" element={<Newsgrid   key="" country="us" category="general" pagesize="9"></Newsgrid>} />
+            <Route exact path="/business" element={<Newsgrid   key="business" country="us" category="business" pagesize="9"></Newsgrid>} />
+            <Route exact path="/sports" element={<Newsgrid  key="sports" country="us" category="sports" pagesize="9"></Newsgrid>} />
+            <Route exact path="/entertainment" element={<Newsgrid   key="entertainment" country="us" category="entertainment" pagesize="9"></Newsgrid>} />
+            <Route exact path="/science" element={<Newsgrid   key="science" country="us" category="science" pagesize="9"></Newsgrid>} />
+            <Route exact path="/technology" element={<Newsgrid  key="technology" country="us" category="technology" pagesize="9"></Newsgrid>} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    )
+  }
 }
 
-export default App;
+

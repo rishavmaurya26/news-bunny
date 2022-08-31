@@ -20,10 +20,11 @@ export default class newsitem extends Component {
               alt="..." />
             <div className="card-body">
               <h6 className="card-title text-center" >{title === null ? "." : title.substr(0, 45)}</h6>
-              <p className="card-text my-1">{description === null ? "." : description.substr(0, 150)}</p>
-              <div className="overlay"></div>
+              <p className="card-text my-1">{description === null ? "." : description.substr(0, 80)+"........."}</p>
+              
             </div>
             <a href={url} className="stretched-link">.</a>
+            <div className="overlay"></div>
           </div>
           
       </div>

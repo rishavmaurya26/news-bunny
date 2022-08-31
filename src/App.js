@@ -10,7 +10,6 @@ export default class App extends Component {
     return (
       <BrowserRouter>
          <div>
-         
           <Navbar></Navbar>
           <Routes>
             <Route exact path="/" element={<Newsgrid   key="" country="us" category="general" pagesize="9"></Newsgrid>} />
